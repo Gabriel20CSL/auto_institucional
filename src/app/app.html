@@ -1,0 +1,44 @@
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    display: block;
+}
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    justify-content: center;  
+    text-align: center;
+    min-height: 280px;       
+  }
+.stats-container {
+  display: flex;
+  justify-content: center;   /* ou space-between / gap */
+  gap: 1rem;
+  flex-wrap: wrap;
+  }
+
+.main-content {
+  max-width: 1200px;   /* ou o valor que quiser */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  }
+
+</style>
+
+<main class="main">
+  
+</main>
+
+<router-outlet />

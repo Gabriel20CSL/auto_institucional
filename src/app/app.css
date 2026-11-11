@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 10vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #dd0031;
+}
+
+p {
+  color: #555;
+  margin-top: 15px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}

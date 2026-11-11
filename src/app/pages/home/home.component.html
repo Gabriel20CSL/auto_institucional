@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Minhas tarefas</h1>
+  <a routerLink="/tarefa-nova" class="btn btn-primary">Adicionar</a>
+</div>
+
+<div *ngIf="tarefas.length === 0" class="alert alert-info">
+  Nenhuma tarefa cadastrada.
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-3" *ngFor="let tarefa of tarefas">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ tarefa.nome }}</h5>
+        <p class="card-text mb-1"><strong>Prioridade:</strong> {{ tarefa.prioridade }}</p>
+        <p class="card-text mb-1"><strong>Data:</strong> {{ tarefa.data | date:'dd/MM/yyyy' }}</p>
+        <p class="card-text"><strong>Categoria:</strong> {{ tarefa.categoria }}</p>
+        <a [routerLink]="['/tarefa-atualiza', tarefa.id]" class="btn btn-warning btn-sm me-2">Editar</a>
+        <button class="btn btn-danger btn-sm" (click)="deletar(tarefa.id)">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>

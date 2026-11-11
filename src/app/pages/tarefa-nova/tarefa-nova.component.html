@@ -1,0 +1,36 @@
+<h1 class="mb-4">Nova tarefa</h1>
+
+<form (ngSubmit)="salvar()" #formTarefa="ngForm" class="card card-body">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input id="nome" name="nome" type="text" class="form-control" [(ngModel)]="tarefa.nome" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="prioridade" class="form-label">Prioridade</label>
+    <select id="prioridade" name="prioridade" class="form-select" [(ngModel)]="tarefa.prioridade" required>
+      <option value="">Selecione</option>
+      <option>Baixa</option>
+      <option>Média</option>
+      <option>Alta</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="data" class="form-label">Data limite</label>
+    <input id="data" name="data" type="date" class="form-control" [(ngModel)]="tarefa.data" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label d-block">Categoria</label>
+    <button type="button" class="btn btn-outline-primary me-2 mb-2" *ngFor="let categoria of categorias" (click)="tarefa.categoria = categoria">
+      {{ categoria }}
+    </button>
+    <p>Categoria escolhida: {{ tarefa.categoria }}</p>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-success me-2" [disabled]="formTarefa.invalid || !tarefa.categoria">Salvar</button>
+    <a routerLink="/" class="btn btn-secondary">Cancelar</a>
+  </div>
+</form>
